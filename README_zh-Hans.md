@@ -12,7 +12,7 @@
 
 
 <p align="center">
-    <a href="https://peachest.github.io/mongoose-gridfs-extra/">API Documents</a>
+    <a href="https://peachest.github.io/mongoose-gridfs-extra/">API 文档</a>
 </p>
 
 <p align="center">
@@ -23,13 +23,13 @@
 
 
 
-A simple wrapper for the Mongoose GridFSBucket-API. If you need a similar wrapper for Mongodb GridFSBucket-API, see [gridfs-extra](https://github.com/peachest/gridfs-extra)
+简单封装了 Mongoose GirdFSBucket 的 API。如果你需要搭配 mongodb 使用，请查看这个仓库 [gridfs-extra](https://github.com/peachest/gridfs-extra)。
 
-This package is designed to avoid operations on the stream objects provided by the native API, thereby saving time.
+本项目是为了避免在原生 API 提供的流对象上执行繁琐且反复的读写操作，节省时间
 
-## Install
+## 安装
 
-**install npm package**
+**安装 npm 包**
 
 ```shell
 npm install mongoose-gridfs-extra
@@ -37,7 +37,7 @@ npm install mongoose-gridfs-extra
 
 
 
-or **clone from Github**
+或者 **克隆 Github 仓库**
 
 ```shell
 # ssh
@@ -51,9 +51,9 @@ git clone https://github.com/peachest/mongoose-gridfs-extra.git
 
 ## Usage
 
-Complete **runnable** example is provided. See `example/example.{cjs,mjs}`.
+本项目提供了完整的可运行的范例代码。请查看 `example/example.{cjs,mjs}`.
 
-After cloning the repository to local, run:
+克隆仓库到本地后，请运行：
 
 ```shell
 cd mongoose-gridfs-extra
@@ -65,7 +65,7 @@ node example/example.mjs
 
 ****
 
-**Import**
+**在项目中导入**
 
 ```javascript
 // ESModule
@@ -79,7 +79,7 @@ const gridfs = require("mongoose-gridfs-extra")
 
 
 
-**Connect to Mongodb Server**
+**连接到本地 Mongodb 服务器**
 
 ```javascript
 const uri = 'mongodb://localhost:27017/test';
@@ -88,7 +88,7 @@ const connect = await mongoose.createConnection(uri).asPromise()
 
 
 
-**Create GridFS bucket**
+**创建 GridFS bucket**
 
 ```javascript
 const db = connect.db
@@ -100,12 +100,12 @@ const options = {
 // mongoose-gridfs-extra
 const bucket = gridfs.createGridFSBucket(db, options)
 // or mongodb native API
-const bucket = new mongoosemongodb.GridFSBucket(db, options) ;
+const bucket = new mongoose.mongodb.GridFSBucket(db, options) ;
 ```
 
 
 
-**Write file into bucket**
+**写入文件到 bucket 中**
 
 ```javascript
 // Read Buffer type file content
@@ -119,7 +119,7 @@ const id = gridFSFile._id
 
 
 
-**Read file from bucket**
+**从 bucket 中读取文件**
 
 ```javascript
 // Read file from bucket
@@ -130,11 +130,11 @@ file = await gridfs.readFileByName(bucket, fileName, {
 })
 ```
 
-:warning: A bucket can store files with the same name. If you wonder how the bucket will retrun when read file by name, see the following native doc from mongodb gridfs bucket:
+:warning: 一个 bucket 可以存储同名文件。如果你好奇 bucket 如何在同名文件中按名查找文件，阅读以下 mongodb 官方文档的描述：
 
 > If there are multiple files with the same name, this will stream **the most recent file** with the given name (as determined by the uploadDate field). You can set the **revision option** to change this behavior.
 
-As for the revision:
+对于 `revision `选项:
 
 > The revision number relative to the oldest file with the given filename.
 >

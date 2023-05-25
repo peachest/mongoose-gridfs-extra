@@ -1,0 +1,74 @@
+{
+  "name": "mongoose-gridfs-extra",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "description": "A simple wrapper for the Mongoose GridFSBucket-API",
+  "keywords": [
+    "mongodb",
+    "mongoose",
+    "gridfs",
+    "promise"
+  ],
+  "author": {
+    "name": "peachest",
+    "email": "1938913473@qq.com",
+    "url": ""
+  },
+  "homepage": "",
+  "bugs": "https://github.com/peachest/mongoose-gridfs-extra/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/peachest/mongoose-gridfs-extra.git"
+  },
+  "type": "module",
+  "files": [
+    "bin/",
+    "dist/",
+    "README.md",
+    "README_zh-Hans.md"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "test": "node example/example.cjs && node example/example.mjs",
+    "build": "rollup -cw",
+    "docs": "api-extractor run --diagnostics && api-documenter markdown --input-folder ./api-report -o ./docs"
+  },
+  "devDependencies": {
+    "@microsoft/api-documenter": "^7.22.6",
+    "@microsoft/api-extractor": "^7.35.0",
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@types/fs-extra": "^11.0.1",
+    "@types/lodash-es": "^4.17.6",
+    "@types/node": "^20.2.3",
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/parser": "^5.54.1",
+    "eslint": "^8.35.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-tsdoc": "^0.2.17",
+    "prettier": "^2.8.4",
+    "rollup": "^3.18.0",
+    "rollup-plugin-clear": "^2.0.7",
+    "rollup-plugin-dts": "^5.2.0",
+    "rollup-plugin-keep-header-comment": "^1.0.0",
+    "rollup-plugin-node-externals": "^6.0.1",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "rollup-plugin-visualizer": "^5.9.0",
+    "tslib": "^2.5.0",
+    "type-fest": "^3.6.1",
+    "typescript": "^5.0.4"
+  },
+  "peerDependencies": {
+    "fs-extra": "^11.1.1",
+    "mongoose": "^7.2.1"
+  }
+}

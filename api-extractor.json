@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/api-extractor/v7/api-extractor.schema.json",
+  "projectFolder": ".",
+  "mainEntryPointFilePath": "dist/index.d.ts",
+  "bundledPackages": [],
+  "newlineKind": "lf",
+  "testMode": false,
+  "enumMemberOrder": "by-name",
+  "compiler": {
+     "tsconfigFilePath": "./tsconfig.json"
+  },
+  "apiReport": {
+    "enabled": true,
+    "reportFileName": "index.api.md",
+     "reportFolder": "api-report/",
+     "reportTempFolder": "api-report/",
+     "includeForgottenExports": false
+  },
+  "docModel": {
+    "enabled": true,
+    "apiJsonFilePath": "api-report/index.api.json",
+    "includeForgottenExports": false
+  },
+  "dtsRollup": {
+    "enabled": true,
+    "untrimmedFilePath": "api-report/index.d.ts",
+    "alphaTrimmedFilePath": "api-report/alpha.d.ts",
+    "betaTrimmedFilePath": "api-report/beta.d.ts",
+    "publicTrimmedFilePath": "api-report/public.d.ts",
+     "omitTrimmingComments": true
+  },
+  "tsdocMetadata": {
+     "enabled": true,
+     "tsdocMetadataFilePath": "api-report/tsdoc-metadata.json"
+  },
+  "messages": {
+    "compilerMessageReporting": {
+      "default": {
+        "logLevel": "warning",
+         "addToApiReportFile": false
+      }
+    },
+    "extractorMessageReporting": {
+      "default": {
+        "logLevel": "warning",
+         "addToApiReportFile": false
+      }
+    },
+    "tsdocMessageReporting": {
+      "default": {
+        "logLevel": "warning",
+         "addToApiReportFile": false
+      }
+    }
+  }
+}

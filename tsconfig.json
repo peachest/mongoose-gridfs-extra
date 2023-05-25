@@ -1,0 +1,51 @@
+{
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "src/",
+    "example/",
+    ".eslintrc.cjs",
+    "rollup.config.mjs"
+  ],
+  "compilerOptions": {
+    "target": "ESNext",
+    "experimentalDecorators": true,
+    "module": "ESNext",
+    "rootDir": "./",
+    "moduleResolution": "Node",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": [
+        "./*"
+      ],
+      "@/src/*": [
+        "./src/*"
+      ],
+      "@/types/*": [
+        "./types/*"
+      ]
+    },
+    "rootDirs": [
+      "src"
+    ],
+    "typeRoots": [
+      "types",
+      "node_modules/@types"
+    ],
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "outDir": "dist",
+    "sourceMap": true,
+    "removeComments": false,
+    "importHelpers": true,
+    "importsNotUsedAsValues": "remove",
+    "newLine": "lf",
+    "noEmitOnError": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  }
+}

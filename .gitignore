@@ -1,3 +1,15 @@
+# api-extractor
+api-report
+
+# rollup-plugin-visualizer
+stat
+
+# sensitive
+.secret*
+
+# Editor
+.idea
+
 # Logs
 logs
 *.log

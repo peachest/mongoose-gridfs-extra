@@ -1,0 +1,963 @@
+{
+  "metadata": {
+    "toolPackage": "@microsoft/api-extractor",
+    "toolVersion": "7.35.0",
+    "schemaVersion": 1011,
+    "oldestForwardsCompatibleVersion": 1001,
+    "tsdocConfig": {
+      "$schema": "https://developer.microsoft.com/json-schemas/tsdoc/v0/tsdoc.schema.json",
+      "noStandardTags": true,
+      "tagDefinitions": [
+        {
+          "tagName": "@alpha",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@beta",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@defaultValue",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@decorator",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@deprecated",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@eventProperty",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@example",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@experimental",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@inheritDoc",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@internal",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@label",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@link",
+          "syntaxKind": "inline",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@override",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@packageDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@param",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@privateRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@public",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@readonly",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@remarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@returns",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@sealed",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@see",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@throws",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@typeParam",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@virtual",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@betaDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@internalRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@preapproved",
+          "syntaxKind": "modifier"
+        }
+      ],
+      "supportForTags": {
+        "@alpha": true,
+        "@beta": true,
+        "@defaultValue": true,
+        "@decorator": true,
+        "@deprecated": true,
+        "@eventProperty": true,
+        "@example": true,
+        "@experimental": true,
+        "@inheritDoc": true,
+        "@internal": true,
+        "@label": true,
+        "@link": true,
+        "@override": true,
+        "@packageDocumentation": true,
+        "@param": true,
+        "@privateRemarks": true,
+        "@public": true,
+        "@readonly": true,
+        "@remarks": true,
+        "@returns": true,
+        "@sealed": true,
+        "@see": true,
+        "@throws": true,
+        "@typeParam": true,
+        "@virtual": true,
+        "@betaDocumentation": true,
+        "@internalRemarks": true,
+        "@preapproved": true
+      },
+      "reportUnsupportedHtmlElements": false
+    }
+  },
+  "kind": "Package",
+  "canonicalReference": "mongoose-gridfs-extra!",
+  "docComment": "/**\n * A simple wrapper for mongodb gridfs bucket.\n *\n * @packageDocumentation\n */\n",
+  "name": "mongoose-gridfs-extra",
+  "preserveMemberOrder": false,
+  "members": [
+    {
+      "kind": "EntryPoint",
+      "canonicalReference": "mongoose-gridfs-extra!",
+      "name": "",
+      "preserveMemberOrder": false,
+      "members": [
+        {
+          "kind": "Function",
+          "canonicalReference": "mongoose-gridfs-extra!createGridFSBucket:function(1)",
+          "docComment": "/**\n * create a gridFS bucket object to store files into mongodb\n *\n * @param db - database\n *\n * @param options - options for creating gridFS bucket\n *\n * @returns a mongodb GridFSBucket object\n *\n * @example\n * ```javascript\n * import {mongoose} = require(\"mongodb\");\n * import gridfs = require('mongoose-gridfs-extra')\n *\n * const uri = 'mongodb://localhost:27017/test';\n * const connection = await mongoose.createConnection(uri).asPromise()\n * const db = connection.db\n *\n * // Create a new GridFSBucket\n * const bucket = gridfs.createGridFSBucket(db)\n *\n * // Close the connection\n * connection.close();\n * ```\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "declare function createGridFSBucket(db: "
+            },
+            {
+              "kind": "Reference",
+              "text": "mongo.Db",
+              "canonicalReference": "mongodb!Db:class"
+            },
+            {
+              "kind": "Content",
+              "text": ", options?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "mongo.GridFSBucketOptions",
+              "canonicalReference": "mongodb!GridFSBucketOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " | undefined"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "mongo.GridFSBucket",
+              "canonicalReference": "mongodb!GridFSBucket:class"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "dist/index.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 6,
+            "endIndex": 7
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "db",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "options",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "createGridFSBucket"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "mongoose-gridfs-extra!getGridFSBucketDb:function(1)",
+          "docComment": "/**\n * getGridFSBucketDb returns mongodb Db instance which is used to create this bucket.\n *\n * this not a wrapper of mongodb public native api, so use this method carefully\n *\n * @param bucket - a mongodb gridFS bucket\n *\n * @returns mongodb Db instance\n *\n * @public @experimental\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "declare function getGridFSBucketDb(bucket: "
+            },
+            {
+              "kind": "Reference",
+              "text": "mongo.GridFSBucket",
+              "canonicalReference": "mongodb!GridFSBucket:class"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "mongo.Db",
+              "canonicalReference": "mongodb!Db:class"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "dist/index.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "bucket",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "getGridFSBucketDb"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "mongoose-gridfs-extra!getGridFSBucketName:function(1)",
+          "docComment": "/**\n * getGridFSBucketName returns the bucket's name\n *\n * this not a wrapper of mongodb public native api, so use this method carefully\n *\n * @param bucket - a mongodb gridFS bucket\n *\n * @returns bucket name\n *\n * @public @experimental\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "declare function getGridFSBucketName(bucket: "
+            },
+            {
+              "kind": "Reference",
+              "text": "mongo.GridFSBucket",
+              "canonicalReference": "mongodb!GridFSBucket:class"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "dist/index.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "bucket",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "getGridFSBucketName"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "mongoose-gridfs-extra!getGridFSBucketOptions:function(1)",
+          "docComment": "/**\n * getGridFSBucketDb returns mongodb gridFS bucket options which is used to create this bucket.\n *\n * this not a wrapper of mongodb public native api, so use this method carefully\n *\n * @param bucket - a mongodb gridFS bucket\n *\n * @returns a bucket options\n *\n * @public @experimental\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "declare function getGridFSBucketOptions(bucket: "
+            },
+            {
+              "kind": "Reference",
+              "text": "mongo.GridFSBucket",
+              "canonicalReference": "mongodb!GridFSBucket:class"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "mongo.GridFSBucketOptions",
+              "canonicalReference": "mongodb!GridFSBucketOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "dist/index.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "bucket",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "getGridFSBucketOptions"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "mongoose-gridfs-extra!readFileById:function(1)",
+          "docComment": "/**\n * readFileById returns Buffer read from specified file stored in mongodb bucket by objectId\n *\n * @param bucket - a mongodb gridFS bucket\n *\n * @param id - objectId of file to read\n *\n * @param options - options for opening download stream\n *\n * @returns a promise that resolves to a Buffer\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "declare function readFileById(bucket: "
+            },
+            {
+              "kind": "Reference",
+              "text": "mongo.GridFSBucket",
+              "canonicalReference": "mongodb!GridFSBucket:class"
+            },
+            {
+              "kind": "Content",
+              "text": ", id: "
+            },
+            {
+              "kind": "Reference",
+              "text": "mongo.ObjectId",
+              "canonicalReference": "bson!ObjectId:class"
+            },
+            {
+              "kind": "Content",
+              "text": ", options?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "mongo.GridFSBucketReadStreamOptionsWithRevision",
+              "canonicalReference": "mongodb!GridFSBucketReadStreamOptionsWithRevision:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " | undefined"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Promise",
+              "canonicalReference": "!Promise:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "Buffer",
+              "canonicalReference": "!\"\\\"buffer\\\"\".__global.Buffer:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ">"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "dist/index.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 8,
+            "endIndex": 12
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "bucket",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "id",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "options",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 7
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "readFileById"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "mongoose-gridfs-extra!readFileByName:function(1)",
+          "docComment": "/**\n * readFileByName returns Buffer read from specified file stored in mongodb bucket by fileName\n *\n * @param bucket - a mongodb gridFS bucket\n *\n * @param fileName - name of file to read\n *\n * @param options - options for opening download stream\n *\n * @returns a promise that resolves to a Buffer\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "declare function readFileByName(bucket: "
+            },
+            {
+              "kind": "Reference",
+              "text": "mongo.GridFSBucket",
+              "canonicalReference": "mongodb!GridFSBucket:class"
+            },
+            {
+              "kind": "Content",
+              "text": ", fileName: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ", options?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "mongo.GridFSBucketReadStreamOptionsWithRevision",
+              "canonicalReference": "mongodb!GridFSBucketReadStreamOptionsWithRevision:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " | undefined"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Promise",
+              "canonicalReference": "!Promise:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "Buffer",
+              "canonicalReference": "!\"\\\"buffer\\\"\".__global.Buffer:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ">"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "dist/index.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 8,
+            "endIndex": 12
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "bucket",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "fileName",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "options",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 7
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "readFileByName"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "mongoose-gridfs-extra!readFileWithStream:function(1)",
+          "docComment": "/**\n * readFileWithStream reads a file from gridFS bucket using the provided stream\n *\n * @param downloadStream - The stream to download file from mongodb\n *\n * @returns returns a promise that resolves to a Buffer\n *\n * @example\n *\n * const stream = bucket.openDownloadStreamByName(\"example.txt\") ; const buffer = await readFileWithStream(stream) ;\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "declare function readFileWithStream(downloadStream: "
+            },
+            {
+              "kind": "Reference",
+              "text": "mongo.GridFSBucketReadStream",
+              "canonicalReference": "mongodb!GridFSBucketReadStream:class"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Promise",
+              "canonicalReference": "!Promise:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "Buffer",
+              "canonicalReference": "!\"\\\"buffer\\\"\".__global.Buffer:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ">"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "dist/index.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 7
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "downloadStream",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "readFileWithStream"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "mongoose-gridfs-extra!writeFileById:function(1)",
+          "docComment": "/**\n * readFileByName stores file into gridFS bucket by id\n *\n * @param bucket - a mongodb gridFS bucket\n *\n * @param id - objectId of file to read\n *\n * @param file - the file to save into mongodb bucket\n *\n * @param fileName - name of file to store\n *\n * @param options - options for opening download stream\n *\n * @returns a promise that resolves to a GridFSFile\n *\n * @throws\n *\n * Error\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "declare function writeFileById(bucket: "
+            },
+            {
+              "kind": "Reference",
+              "text": "mongo.GridFSBucket",
+              "canonicalReference": "mongodb!GridFSBucket:class"
+            },
+            {
+              "kind": "Content",
+              "text": ", id: "
+            },
+            {
+              "kind": "Reference",
+              "text": "mongo.ObjectId",
+              "canonicalReference": "bson!ObjectId:class"
+            },
+            {
+              "kind": "Content",
+              "text": ", file: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Buffer",
+              "canonicalReference": "!\"\\\"buffer\\\"\".__global.Buffer:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ", fileName: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ", options?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "mongo.GridFSBucketWriteStreamOptions",
+              "canonicalReference": "mongodb!GridFSBucketWriteStreamOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " | undefined"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Promise",
+              "canonicalReference": "!Promise:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "mongo.GridFSFile",
+              "canonicalReference": "mongodb!GridFSFile:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ">"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "dist/index.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 12,
+            "endIndex": 16
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "bucket",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "id",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "file",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "fileName",
+              "parameterTypeTokenRange": {
+                "startIndex": 7,
+                "endIndex": 8
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "options",
+              "parameterTypeTokenRange": {
+                "startIndex": 9,
+                "endIndex": 11
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "writeFileById"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "mongoose-gridfs-extra!writeFileByName:function(1)",
+          "docComment": "/**\n * readFileByName stores file into gridFS bucket by fileName\n *\n * @param bucket - a mongodb gridFS bucket\n *\n * @param file - the file to save into mongodb bucket\n *\n * @param fileName - name of file to store\n *\n * @param options - options for opening download stream\n *\n * @returns a promise that resolves to a GridFSFile\n *\n * @throws\n *\n * Error\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "declare function writeFileByName(bucket: "
+            },
+            {
+              "kind": "Reference",
+              "text": "mongo.GridFSBucket",
+              "canonicalReference": "mongodb!GridFSBucket:class"
+            },
+            {
+              "kind": "Content",
+              "text": ", file: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Buffer",
+              "canonicalReference": "!\"\\\"buffer\\\"\".__global.Buffer:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ", fileName: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ", options?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "mongo.GridFSBucketWriteStreamOptions",
+              "canonicalReference": "mongodb!GridFSBucketWriteStreamOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " | undefined"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Promise",
+              "canonicalReference": "!Promise:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "mongo.GridFSFile",
+              "canonicalReference": "mongodb!GridFSFile:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ">"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "dist/index.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 10,
+            "endIndex": 14
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "bucket",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "file",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "fileName",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "options",
+              "parameterTypeTokenRange": {
+                "startIndex": 7,
+                "endIndex": 9
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "writeFileByName"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "mongoose-gridfs-extra!writeFileWithStream:function(1)",
+          "docComment": "/**\n * writeFileWithStream store a file into gridFS bucket using the provided stream. This function will overwrite the\n *\n * @param uploadStream - The stream to upload file to mongodb\n *\n * @param file - the file to save into mongodb bucket\n *\n * @returns a promise that resolves to a GridFSFile\n *\n * @example\n *\n * const uploadStream = bucket.openUploadStream(\"example.txt\") ; const gridFsFile = await writeFileWithStream(uploadStream, file) ;\n *\n * @throws\n *\n * Error\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "declare function writeFileWithStream(uploadStream: "
+            },
+            {
+              "kind": "Reference",
+              "text": "mongo.GridFSBucketWriteStream",
+              "canonicalReference": "mongodb!GridFSBucketWriteStream:class"
+            },
+            {
+              "kind": "Content",
+              "text": ", file: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Buffer",
+              "canonicalReference": "!\"\\\"buffer\\\"\".__global.Buffer:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Promise",
+              "canonicalReference": "!Promise:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "mongo.GridFSFile",
+              "canonicalReference": "mongodb!GridFSFile:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ">"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "dist/index.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 9
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "uploadStream",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "file",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "writeFileWithStream"
+        }
+      ]
+    }
+  ]
+}
