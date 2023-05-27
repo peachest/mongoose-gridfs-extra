@@ -9,7 +9,7 @@ readFileByName stores file into gridFS bucket by id
 **Signature:**
 
 ```typescript
-declare function writeFileById(bucket: mongo.GridFSBucket, id: mongo.ObjectId, file: Buffer, fileName: string, options?: mongo.GridFSBucketWriteStreamOptions | undefined): Promise<mongo.GridFSFile>;
+declare function writeFileById(bucket: mongo.GridFSBucket, id: mongo.ObjectId | string | number, file: Buffer, fileName: string, options?: mongo.GridFSBucketWriteStreamOptions | undefined): Promise<mongo.GridFSFile>;
 ```
 
 ## Parameters
@@ -17,7 +17,7 @@ declare function writeFileById(bucket: mongo.GridFSBucket, id: mongo.ObjectId, f
 |  Parameter | Type | Description |
 |  --- | --- | --- |
 |  bucket | mongo.GridFSBucket | a mongodb gridFS bucket |
-|  id | mongo.ObjectId | objectId of file to read |
+|  id | mongo.ObjectId \| string \| number | id of file to read |
 |  file | Buffer | the file to save into mongodb bucket |
 |  fileName | string | name of file to store |
 |  options | mongo.GridFSBucketWriteStreamOptions \| undefined | _(Optional)_ options for opening download stream |

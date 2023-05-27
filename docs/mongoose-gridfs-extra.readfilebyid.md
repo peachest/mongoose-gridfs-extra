@@ -9,7 +9,7 @@ readFileById returns Buffer read from specified file stored in mongodb bucket by
 **Signature:**
 
 ```typescript
-declare function readFileById(bucket: mongo.GridFSBucket, id: mongo.ObjectId, options?: mongo.GridFSBucketReadStreamOptionsWithRevision | undefined): Promise<Buffer>;
+declare function readFileById(bucket: mongo.GridFSBucket, id: mongo.ObjectId | string | number, options?: mongo.GridFSBucketReadStreamOptionsWithRevision | undefined): Promise<Buffer>;
 ```
 
 ## Parameters
@@ -17,7 +17,7 @@ declare function readFileById(bucket: mongo.GridFSBucket, id: mongo.ObjectId, op
 |  Parameter | Type | Description |
 |  --- | --- | --- |
 |  bucket | mongo.GridFSBucket | a mongodb gridFS bucket |
-|  id | mongo.ObjectId | objectId of file to read |
+|  id | mongo.ObjectId \| string \| number | id of file to read |
 |  options | mongo.GridFSBucketReadStreamOptionsWithRevision \| undefined | _(Optional)_ options for opening download stream |
 
 **Returns:**

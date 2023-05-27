@@ -11,9 +11,11 @@ A simple wrapper for mongodb gridfs bucket.
 |  Function | Description |
 |  --- | --- |
 |  [createGridFSBucket(db, options)](./mongoose-gridfs-extra.creategridfsbucket.md) | create a gridFS bucket object to store files into mongodb |
+|  [deleteById(bucket, id)](./mongoose-gridfs-extra.deletebyid.md) | deleteById deletes the specified file stored in the mongodb bucket by id. If id is string or number, <code>new ObjectId(id)</code> will be called to convert it to an ObjectId |
 |  [getGridFSBucketDb(bucket)](./mongoose-gridfs-extra.getgridfsbucketdb.md) | <p>getGridFSBucketDb returns mongodb Db instance which is used to create this bucket.</p><p>this not a wrapper of mongodb public native api, so use this method carefully</p> |
 |  [getGridFSBucketName(bucket)](./mongoose-gridfs-extra.getgridfsbucketname.md) | <p>getGridFSBucketName returns the bucket's name</p><p>this not a wrapper of mongodb public native api, so use this method carefully</p> |
 |  [getGridFSBucketOptions(bucket)](./mongoose-gridfs-extra.getgridfsbucketoptions.md) | <p>getGridFSBucketDb returns mongodb gridFS bucket options which is used to create this bucket.</p><p>this not a wrapper of mongodb public native api, so use this method carefully</p> |
+|  [readAndDeleteById(bucket, id)](./mongoose-gridfs-extra.readanddeletebyid.md) | readAndDeleteById deletes the specified file stored in the mongodb bucket by id, and returns the file contents. If id is string or number, <code>new ObjectId(id)</code> will be called to convert it to an ObjectId |
 |  [readFileById(bucket, id, options)](./mongoose-gridfs-extra.readfilebyid.md) | readFileById returns Buffer read from specified file stored in mongodb bucket by objectId |
 |  [readFileByName(bucket, fileName, options)](./mongoose-gridfs-extra.readfilebyname.md) | readFileByName returns Buffer read from specified file stored in mongodb bucket by fileName |
 |  [readFileWithStream(downloadStream)](./mongoose-gridfs-extra.readfilewithstream.md) | readFileWithStream reads a file from gridFS bucket using the provided stream |

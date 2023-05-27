@@ -4,6 +4,7 @@
  * @packageDocumentation
  */
 import {mongo as mongodb} from "mongoose"
+import {conv2ObjectId} from "@/src/utils/conv";
 
 /**
  * create a gridFS bucket object to store files into mongodb
@@ -84,15 +85,15 @@ export async function writeFileByName(bucket: mongodb.GridFSBucket, file: Buffer
  *
  * @public
  * @param bucket - a mongodb gridFS bucket
- * @param id - objectId of file to read
+ * @param id - id of file to read
  * @param file - the file to save into mongodb bucket
  * @param fileName - name of file to store
  * @param options - options for opening download stream
  * @returns a promise that resolves to a GridFSFile
  * @throws Error
  */
-export async function writeFileById(bucket: mongodb.GridFSBucket, id: mongodb.ObjectId, file: Buffer, fileName: string, options?: mongodb.GridFSBucketWriteStreamOptions | undefined): Promise<mongodb.GridFSFile> {
-    const uploadStream = bucket.openUploadStreamWithId(id, fileName, options) ;
+export async function writeFileById(bucket: mongodb.GridFSBucket, id: mongodb.ObjectId | string | number, file: Buffer, fileName: string, options?: mongodb.GridFSBucketWriteStreamOptions | undefined): Promise<mongodb.GridFSFile> {
+    const uploadStream = bucket.openUploadStreamWithId(conv2ObjectId(id), fileName, options) ;
     return writeFileWithStream(uploadStream, file) ;
 }
 
@@ -137,7 +138,7 @@ export async function readFileWithStream(downloadStream: mongodb.GridFSBucketRea
  */
 export async function readFileByName(bucket: mongodb.GridFSBucket, fileName: string, options?: mongodb.GridFSBucketReadStreamOptionsWithRevision | undefined): Promise<Buffer> {
     const stream = bucket.openDownloadStreamByName(fileName, options) ;
-    return await readFileWithStream(stream) ;
+    return readFileWithStream(stream) ;
 }
 
 /**
@@ -145,13 +146,41 @@ export async function readFileByName(bucket: mongodb.GridFSBucket, fileName: str
  *
  * @public
  * @param bucket - a mongodb gridFS bucket
- * @param id - objectId of file to read
+ * @param id - id of file to read
  * @param options - options for opening download stream
  * @returns a promise that resolves to a Buffer
  */
-export async function readFileById(bucket: mongodb.GridFSBucket, id: mongodb.ObjectId, options?: mongodb.GridFSBucketReadStreamOptionsWithRevision | undefined): Promise<Buffer> {
-    const stream = bucket.openDownloadStream(id, options) ;
-    return await readFileWithStream(stream) ;
+export async function readFileById(bucket: mongodb.GridFSBucket, id: mongodb.ObjectId | string | number, options?: mongodb.GridFSBucketReadStreamOptionsWithRevision | undefined): Promise<Buffer> {
+    const stream = bucket.openDownloadStream(conv2ObjectId(id), options) ;
+    return readFileWithStream(stream) ;
+}
+
+/**
+ * deleteById deletes the specified file stored in the mongodb bucket by id.
+ * If id is string or number, `new ObjectId(id)` will be called to convert it to an ObjectId
+ *
+ * @public
+ * @param bucket - a mongodb gridFS bucket
+ * @param id - id of file to delete
+ */
+export async function deleteById(bucket: mongodb.GridFSBucket, id: mongodb.ObjectId | string | number): Promise<void>{
+    return bucket.delete(conv2ObjectId(id))
+}
+
+/**
+ * readAndDeleteById deletes the specified file stored in the mongodb bucket by id, and returns the file contents.
+ * If id is string or number, `new ObjectId(id)` will be called to convert it to an ObjectId
+ *
+ * @public
+ * @param bucket - a mongodb gridFS bucket
+ * @param id - id of file to delete
+ * @returns a promise that resolves to a Buffer
+ */
+export async function readAndDeleteById(bucket: mongodb.GridFSBucket, id: mongodb.ObjectId | string | number): Promise<Buffer>{
+    id = conv2ObjectId(id)
+    const buffer = await readFileById(bucket, id)
+    await bucket.delete(id)
+    return buffer
 }
 
 /**
@@ -195,6 +224,3 @@ export function getGridFSBucketOptions(bucket: mongodb.GridFSBucket): mongodb.Gr
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     return bucket.s.options as mongodb.GridFSBucketOptions ;
 }
-
-
-

@@ -40,7 +40,7 @@ let storedPackageJson
 // Read file from bucket, the file name must match the one used aboved in writing file to bucket
 // storedPackageJson = await gridfs.readFileByName(bucket, fileName)
 // or use id for unique
-storedPackageJson = await gridfs.readFileById(bucket, id)
+storedPackageJson = await gridfs.readAndDeleteById(bucket, id)
 console.log(storedPackageJson.toString())
 
 
